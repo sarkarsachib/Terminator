@@ -1,0 +1,8 @@
+[observer]
+enabled = true
+
+[trainer]
+enabled = true
+
+[hybrid]
+enabled = true
