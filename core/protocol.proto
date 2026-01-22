@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package terminator.protocol.v1;
+
+message RawMessage {
+  string id = 1;
+  int64 unix_millis = 2;
+  string topic = 3;
+  bytes payload = 4;
+}
+
+message PublishRequest {
+  RawMessage message = 1;
+}
+
+message PublishResponse {}
+
+message SubscribeRequest {
+  string topic_prefix = 1;
+}
+
+service MessageBus {
+  rpc Publish(PublishRequest) returns (PublishResponse);
+  rpc Subscribe(SubscribeRequest) returns (stream RawMessage);
+}

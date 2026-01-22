@@ -1,0 +1,4 @@
+services:
+  terminator:
+    build: .
+    command: ["/usr/local/bin/terminatord"]

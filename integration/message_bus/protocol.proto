@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package terminator.integration.message_bus.v1;
+
+import "core/protocol.proto";
+
+// Re-exported message bus service definition for integration builds.
+service MessageBus {
+  rpc Publish(terminator.protocol.v1.PublishRequest) returns (terminator.protocol.v1.PublishResponse);
+  rpc Subscribe(terminator.protocol.v1.SubscribeRequest) returns (stream terminator.protocol.v1.RawMessage);
+}

@@ -1,0 +1,12 @@
+# Terminator Architecture Configuration
+
+[core]
+event_log_capacity = 10000
+
+[output]
+mode = "silent"  # silent | conditional | voice_first
+confidence_threshold = 0.75
+
+[personality]
+disorder_intensity = 0.10
+irrationality_trigger_rate = 0.05
