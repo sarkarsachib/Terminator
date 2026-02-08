@@ -1,27 +1,45 @@
-# Learning System
+# Terminator Learning System
 
-Terminator scaffolds three parallel learning modes.
+The Learning System is the "brain development" layer of Terminator, enabling continuous autonomous learning through three primary methods.
 
-## Observer
+## Architecture
 
-Passive pattern extraction from multimodal streams.
+### 1. Observer Module
+Autonomous learning from continuous multimodal input streams.
+- **Sensor Fusion**: Aggregates vision, audio, motion, and more.
+- **Pattern Extraction**: Unsupervised discovery of temporal and spatial patterns.
+- **Autonomous Discovery**: Curiosity-driven exploration and causal inference.
 
-Code scaffold:
-- `learning/observer/python/sensors.py`
-- `learning/observer/python/pattern_extraction.py`
+### 2. Trainer Module
+Active, intentional knowledge injection.
+- **Knowledge Library**: Curated expertise in domains like psychology, philosophy, and politics.
+- **Curriculum Builder**: Structured learning progression with spaced repetition.
+- **Expertise Injector**: Direct injection of tool knowledge and expert reasoning.
 
-## Trainer
+### 3. Hybrid Fusion Engine
+Merges Observer and Trainer methods.
+- **Conflict Resolver**: Detects and resolves contradictions between observation and training.
+- **Knowledge Fusion**: Synthesizes bottom-up patterns with top-down knowledge.
+- **Meta-Learning**: Learning how to learn and optimizing strategies.
 
-Curated knowledge ingestion and curriculum injection.
+## Usage
 
-Code scaffold:
-- `learning/trainer/python/knowledge_loader.py`
-- `learning/trainer/python/expertise_injector.py`
+```python
+from learning.observer.sensors import SensorFusion
+from learning.trainer.knowledge_loader import KnowledgeLibrary
+from learning.hybrid.fusion_engine import FusionEngine
 
-## Hybrid
+# Initialize components
+sensors = SensorFusion()
+library = KnowledgeLibrary()
+fusion = FusionEngine()
 
-Fusion layer that reconciles observer discoveries with curated knowledge.
+# Process learning
+data = sensors.aggregate_streams()
+knowledge = library.load_library("domain_expertise")
+belief = fusion.fuse_knowledge_sources(data, knowledge)
+```
 
-Code scaffold:
-- `learning/hybrid/python/fusion_engine.py`
-- `learning/hybrid/python/conflict_resolver.py`
+## Implementation Details
+- Language: Python 3.10+
+- Key Libraries: PyTorch, NumPy, NetworkX, Pydantic, Loguru
